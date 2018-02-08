@@ -1,0 +1,32 @@
+<h1>Cards#edit</h1>
+<p><%= @msg %></p>
+
+<table>
+<%= form_for(@card, url:{controller:"cards", action:"update", id:@card.id}) do |form| %>
+<tr>
+  <th>Title</th>
+  <td><%= form.text_field :title %></td>
+</tr>
+<tr>
+  <th>Author</th>
+  <td><%= form.text_field :author %></td>
+</tr>
+<tr>
+  <th>Price</th>
+  <td><%= form.text_field :price %></td>
+</tr>
+<tr>
+  <th>Publisher</th>
+  <td><%= form.text_field :publisher %></td>
+</tr>
+<tr>
+  <th>Memo</th>
+  <td><%= form.text_field :memo %></td>
+</tr>
+
+<tr>
+  <th></th>
+  <td><%= form.submit "click" %></td>
+</tr>
+<% end %>
+</table>
