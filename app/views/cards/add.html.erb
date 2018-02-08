@@ -1,0 +1,32 @@
+<h1>Cards#add</h1>
+<p><%= @msg %></p>
+
+<table>
+<%= form_for(@card, url:{controller:"cards", action:"create"}) do |form| %>
+<tr>
+  <th>著者</th>
+  <td><%= form.text_field :author %></td>
+</tr>
+<tr>
+  <th>タイトル</th>
+  <td><%= form.text_field :title %></td>
+</tr>
+<tr>
+  <th>出版社</th>
+  <td><%= form.text_field :publisher %></td>
+</tr>
+<tr>
+  <th>価格</th>
+  <td><%= form.text_field :price %></td>
+</tr>
+<tr>
+  <th>メモ</th>
+  <td><%= form.text_field :memo %></td>
+</tr>
+
+<tr>
+  <th></th>
+  <td><%= form.submit "click" %></td>
+</tr>
+<% end %>
+</table>

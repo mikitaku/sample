@@ -1,0 +1,42 @@
+<h1><%= @msg %></h1>
+
+<table>
+
+<tr>
+  <th>id</th><th>著者</th><th>タイトル</th><th>出版社</th><th>金額</th><th colspan = 2></th>
+</tr>
+
+
+<% @data.each do |obj| %>
+  <tr>
+    <td><%= obj.id %></td>
+    <td><%= obj.author %></td>
+    <td><a href="/cards/<%= obj.id %>"><%= obj.title %></a></td>
+    <td><%= obj.publisher %></td>
+    <td><%= obj.price %></td>
+    <td><a href="/cards/edit/<%= obj.id %>">edit</a></td>
+    <td><a href="javascript:delData(<%= obj.id %>);">delete</a></td>
+  </tr>
+<% end %>
+</table>
+
+<br>
+<a href="/cards/add/">データを追加</a>
+
+<script>
+function delData(num){
+  if(confirm("このデータを削除しますか？")){
+    document.location = "/cards/delete/" + num;
+  }
+  return false;
+}
+</script>
+
+
+
+
+<% if false %>
+    <td><a href="/people/<%= obj.id %>"><%= obj.name %></a></td>
+    <td><a href="/people/edit/<%= obj.id %>">edit</a></td>
+    <td><a href="javascript:delData(<%= obj.id %>);">delete</a></td>
+<% end %>
